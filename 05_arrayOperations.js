@@ -21,10 +21,8 @@ const multiplyByTwo = (array) => array.map((elem) => elem * 2);
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
  */
 
-const filterNameStartByA = (array) => {
-  return array.filter((elem) => elem.startsWith("A"));
-};
-
+const filterNameStartByA = (array) =>
+  array.filter((elem) => elem.startsWith("A"));
 /**
  * Utiliser la fonction .reduce sur le tableau passé en paramètre
  * retourne la somme des valeurs du tableau
