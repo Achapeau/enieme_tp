@@ -30,7 +30,7 @@ const countWords = (sentence) => {
     acc[word] = (acc[word] || 0) + 1;
     return acc;
   }, {});
-  return wordCount;
+  return sentence ? wordCount : {};
 };
 console.log(countWords("la pomme est rouge et la banane est jaune"));
 
@@ -58,17 +58,19 @@ exemple:
 */
 
 const sortObjectByValue = (obj) => {
-  return Object.entries(obj).sort((a, b) => a[1] - b[1]);
+
+  return typeof
+  Object.fromEntries(Object.entries(obj).sort((a, b) => a[1] - b[1]));
 };
 
-console.table(
+console.log(
   sortObjectByValue({
-    pommes: 3,
-    bananes: 1,
-    cerises: 8,
-    oranges: 1,
-    poires: 2,
-    fraises: 40,
+    pommes: "p",
+    bananes: "b",
+    cerises: "c",
+    oranges: "o",
+    poires: "p",
+    fraises: "f",
   })
 );
 module.exports = { countWords, sortObjectByValue };

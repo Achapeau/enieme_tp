@@ -22,7 +22,7 @@ const multiplyByTwo = (array) => array.map((elem) => elem * 2);
  */
 
 const filterNameStartByA = (array) => {
-  array.filter((elem) => elem.startsWith("A"));
+  return array.filter((elem) => elem.startsWith("A"));
 };
 
 /**
