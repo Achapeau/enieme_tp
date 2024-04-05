@@ -59,9 +59,33 @@ exemple:
 
 */
 
+/* const sortObjectByValue = (obj) => {
+*   return typeof Object.entries(obj)[1][1] === "number"
+*     ? Object.fromEntries(Object.entries(obj).sort((a, b) => a[1] - b[1]))
+*     : Object.fromEntries(Object.entries(obj).sort());
+* }; 
+*/
 const sortObjectByValue = (obj) => {
-  return Object.fromEntries(Object.entries(obj).sort((a, b) => a[1] - b[1]));
+  return Object.fromEntries(
+    Object.entries(obj).sort(
+      (a, b) =>
+        typeof a[1] === "number" && typeof b[1] === "number"
+          ? a[1] - b[1] // Tri par ordre numérique
+          : a[1].localeCompare(b[1]) // Tri par ordre alphabétique
+    )
+  );
 };
+
+console.log(
+  sortObjectByValue({
+    pommes: 10,
+    bananes: 2,
+    cerises: 3,
+    oranges: 1,
+    poires: 5,
+    fraises: 40,
+  })
+);
 
 console.log(
   sortObjectByValue({
